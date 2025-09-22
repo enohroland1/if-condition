@@ -5,6 +5,10 @@ on:
       - main
 jobs:
   lint:
+    strategy:
+      fail-fast: true
+      matrix:
+        operating-system: [ubuntu-latest, macos-latest, windows-latest]
     runs-on: ubuntu-latest
     steps:
       - name: Get code
